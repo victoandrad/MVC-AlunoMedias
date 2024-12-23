@@ -21,15 +21,6 @@ const alunos = [
     },
 ]
 
-// Para calcular a média por matéria de cada aluno
-alunos.forEach(aluno => {
-    aluno.medias = {}
-    let materias = Object.keys(aluno.notas)
-    materias.forEach(materia => {
-        aluno.medias[materia] = avarege(...aluno.notas[materia])
-    })
-})
-
 // Variáveis globais
 const table = document.querySelector("[table-data]")
 const thead = table.querySelector("thead")
