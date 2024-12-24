@@ -13,16 +13,16 @@ class EditAlunoView {
                     <input type="text" class="validate" id="materia_${materia}"/ disabled value="${materia}">
                 </div>
                 <div class="input-field col s2">
-                    <input type="number" class="validate" id="nota_${materia}_1" nota/>
+                    <input type="number" class="validate" id="nota_${materia}_1" nota/ value="${aluno.notas[materia][0]}">
                 </div>
                 <div class="input-field col s2">
-                    <input type="number" class="validate" id="nota_${materia}_2" nota/>
+                    <input type="number" class="validate" id="nota_${materia}_2" nota/ value="${aluno.notas[materia][0]}">
                 </div>
                 <div class="input-field col s2">
-                    <input type="number" class="validate" id="nota_${materia}_3" nota/>
+                    <input type="number" class="validate" id="nota_${materia}_3" nota/ value="${aluno.notas[materia][0]}">
                 </div>
                 <div class="input-field col s2">
-                    <input type="number" class="validate" id="nota_${materia}_4" nota/>
+                    <input type="number" class="validate" id="nota_${materia}_4" nota/ value="${aluno.notas[materia][0]}">
                 </div>
             </div>`
         }).join("")

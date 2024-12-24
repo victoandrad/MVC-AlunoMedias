@@ -7,16 +7,18 @@ class AlunoModel {
         if (this._id > AlunoModel.maxId) AlunoModel.maxId = this._id
 
         this.medias = {}
-        for (let materia in this.notas) {
-            this.medias[materia] = avarege(...this.notas[materia])
-        }
-
+        this.generateAvarage()
     }
 
     generateId() {
         return AlunoModel.maxId++
     }
 
+    generateAvarage() {
+        for (let materia in this.notas) {
+            this.medias[materia] = avarege(...this.notas[materia])
+        }
+    }
 
 }
 

@@ -17,8 +17,9 @@ class AlunoService {
     edit(aluno, nome, notas) {
         aluno.nome = nome
         aluno.notas = notas
-
+        aluno.generateAvarage()
         this.updateLocalStorage()
+        return aluno
     }
 
     findById(id) {
