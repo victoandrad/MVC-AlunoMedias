@@ -51,6 +51,7 @@
       </div>
       <h2 class="materialize-red-text text-lighten-2 underlined main-title">Detalhe do Aluno</h2>
       <form class="form-add">
+
         <div class="row">
           <div class="input-field col s12">
             <input type="text" class="validate" id="first_name" placeholder="Digite o nome do aluno">
@@ -59,26 +60,19 @@
           <div class="input-field col s12">
               <p>Notas por matéria</p>
           </div>
-          <div class="input-field col s4">
-            <input type="text" class="validate" id="materia"/>
-          </div>
-          <div class="input-field col s2">
-            <input type="text" class="validate" id="nota_materia_1"/>
-          </div>
-          <div class="input-field col s2">
-            <input type="text" class="validate" id="nota_materia_2"/>
-          </div>
-          <div class="input-field col s2">
-            <input type="text" class="validate" id="nota_materia_3"/>
-          </div>
-          <div class="input-field col s2">
-            <input type="text" class="validate" id="nota_materia_4"/>
-          </div>
+        </div>
+
+        <div data-edit-notas>
+
+        </div>
+  
+        <div class="row">
           <div class="input-field col s4">
             <a href="index.html" class="btn">Cancelar</a>
             <button class="btn" type="submit" name="action">Cadastrar</button>
           </div>
         </div>
+
       </form>
     </div>
 
@@ -86,6 +80,7 @@
     <script src="js/models/AlunoModel.js"></script>
     <script src="js/services/AlunoService.js"></script>
     <script src="js/views/AlunoView.js"></script>
+    <script src="js/views/EditAlunoView.js"></script>
     <script src="js/controllers/AlunoController.js"></script>
     <script>
 
@@ -95,6 +90,8 @@
         const id = parseInt(params.get("id"))
         const aluno = alunosService.findById(1)
 
+        const editAlunoView = new EditAlunoView()
+    
 
         document.getElementById("first_name").value = aluno.nome
 
