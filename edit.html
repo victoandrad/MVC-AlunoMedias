@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Victor Andrade">
+    <meta name="description" content="Gerenciador de médias escolares">
+    <title>Editar Aluno - Médias de Alunos</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/materialize.min.css">
+
+    <style type="text/css">
+      h1 {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      .underlined {
+        border-bottom: 3px solid currentColor;
+      }
+
+      .reproved {
+        background-color: red;
+      }
+
+      .aproved {
+        background-color: green;
+      }
+
+      .form-add {
+        background: #e3ecec;
+        padding-top: 0.75em;
+      }
+
+      .main-title {
+        margin-bottom: 0;
+      }
+
+      .input-field p {
+          margin: 0;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="hero center card-panel materialize-red darken-4 white-text z-depth-3">
+        <h1 class="materialize-red-text text-lighten-3">Curso Javascript Completo</h1>
+      </div>
+      <h2 class="materialize-red-text text-lighten-2 underlined main-title">Detalhe do Aluno</h2>
+      <form class="form-add">
+        <div class="row">
+          <div class="input-field col s12">
+            <input type="text" class="validate" id="first_name" placeholder="Digite o nome do aluno">
+            <label for="first_name" class="active">Nome do Aluno</label>
+          </div>
+          <div class="input-field col s12">
+              <p>Notas por matéria</p>
+          </div>
+          <div class="input-field col s4">
+            <input type="text" class="validate" id="materia"/>
+          </div>
+          <div class="input-field col s2">
+            <input type="text" class="validate" id="nota_materia_1"/>
+          </div>
+          <div class="input-field col s2">
+            <input type="text" class="validate" id="nota_materia_2"/>
+          </div>
+          <div class="input-field col s2">
+            <input type="text" class="validate" id="nota_materia_3"/>
+          </div>
+          <div class="input-field col s2">
+            <input type="text" class="validate" id="nota_materia_4"/>
+          </div>
+          <div class="input-field col s4">
+            <a href="index.html" class="btn">Cancelar</a>
+            <button class="btn" type="submit" name="action">Cadastrar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script src="js/calc.js"></script>
+    <script src="js/models/AlunoModel.js"></script>
+    <script src="js/services/AlunoService.js"></script>
+    <script src="js/views/AlunoView.js"></script>
+    <script src="js/controllers/AlunoController.js"></script>
+    <script>
+
+        const alunosService = new AlunoService()
+
+        alunos.forEach(aluno => {
+          alunosService.insert(new AlunoModel(aluno))
+        })
+
+        const params = new URLSearchParams(window.location.search)
+        const id = parseInt(params.get("id"))
+        const aluno = alunosService.findById(1)
+        console.log(aluno)
+
+    </script>
+  </body>
+</html>
