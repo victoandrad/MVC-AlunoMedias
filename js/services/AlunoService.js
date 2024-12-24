@@ -14,6 +14,13 @@ class AlunoService {
         return this.alunos[this.alunos.length - 1]
     }
 
+    edit(aluno, nome, notas) {
+        aluno.nome = nome
+        aluno.notas = notas
+
+        this.updateLocalStorage()
+    }
+
     findById(id) {
         if (typeof id !== "number") {
             throw Error("Only numbers are accepted")
