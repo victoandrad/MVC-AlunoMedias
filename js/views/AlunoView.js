@@ -9,25 +9,23 @@ class AlunoView {
     }
 
     renderHeader() {
-        const header = document.createElement("header")
-        header.innerHTML = `<td>Nome</td>`
-        header.innerHTML += this.materias.map(materia => {
+        let tr = document.createElement("tr")
+        tr.innerHTML = `<td>Nome</td>`
+        tr.innerHTML += this.materias.map(materia => {
             return `<td>${materia}</td>`
         }).join("")
 
-        this.thead.appendChild(header)
+        this.thead.appendChild(tr)
     }
 
     renderBody(alunos) {
-        const body = ""
         alunos.forEach(aluno => {
             let tr = document.createElement("tr")
             tr.innerHTML = `<td>${aluno.nome}</td>`
             this.materias.forEach(materia => {
                 tr.innerHTML += `<td>${aluno.medias[materia]}</td>`
             })
-            body += tr
+            this.tbody.appendChild(tr)
         })
-        this.tbody.appendChild(body)
     }
 }
