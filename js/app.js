@@ -40,3 +40,9 @@ document.querySelector("form").addEventListener("submit", e => {
         nome.value = ""
     }
 })
+
+document.getElementById("search_name").addEventListener("input", function(e) {
+    e.preventDefault()
+    const nome = this.value
+    alunoController.searchByName(nome)
+})

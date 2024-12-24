@@ -10,4 +10,9 @@ class AlunoController {
         this.service.insert(new AlunoModel(aluno))
         this.view.renderBody(this.service.alunos)
     }
+
+    searchByName(nome) {
+        const data = this.service.searchByName(nome)
+        this.view.renderBody(data)
+    }
 }
