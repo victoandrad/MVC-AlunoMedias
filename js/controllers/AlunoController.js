@@ -7,7 +7,7 @@ class AlunoController {
     }
 
     insert(aluno) {
-        this.service.insert(aluno)
+        this.service.insert(new AlunoModel(aluno))
         this.view.renderBody(this.service.alunos)
     }
 }

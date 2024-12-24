@@ -30,3 +30,11 @@ alunos.forEach(aluno => {
 const alunoModel = new AlunoModel()
 const alunoView = new AlunoView("[table-data]")
 const alunoController = new AlunoController(alunoService, alunoView)
+
+document.querySelector("form").addEventListener("submit", e => {
+    e.preventDefault()
+    const nome = document.getElementById("first_name")
+
+    alunoController.insert({nome: nome.value})
+    nome.value = ""
+})

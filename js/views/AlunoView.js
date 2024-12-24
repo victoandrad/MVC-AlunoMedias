@@ -9,6 +9,7 @@ class AlunoView {
     }
 
     renderHeader() {
+        this.thead.innerHTML = ""
         let tr = document.createElement("tr")
         tr.innerHTML = `<td>Nome</td>`
         tr.innerHTML += this.materias.map(materia => {
@@ -19,11 +20,18 @@ class AlunoView {
     }
 
     renderBody(alunos) {
+        this.tbody.innerHTML = ""
         alunos.forEach(aluno => {
             let tr = document.createElement("tr")
             tr.innerHTML = `<td>${aluno.nome}</td>`
             this.materias.forEach(materia => {
-                tr.innerHTML += `<td>${aluno.medias[materia]}</td>`
+
+                if (aluno.medias[materia] !== undefined) {
+                    tr.innerHTML += `<td>${aluno.medias[materia]}</td>`
+                } else {
+                    tr.innerHTML += `<td><a href="edit.html?id=${aluno._id}">Incluir nota</a></td>`
+                }
+    
             })
             this.tbody.appendChild(tr)
         })

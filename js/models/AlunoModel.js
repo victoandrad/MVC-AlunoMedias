@@ -5,21 +5,19 @@ class AlunoModel {
         this.notas = {...notas}
 
         if (this._id > AlunoModel.maxId) AlunoModel.maxId = this._id
-        
-        this.calculateAverage()
+
+        this.medias = {}
+        for (let materia in this.notas) {
+            this.medias[materia] = avarege(...this.notas[materia])
+        }
+
     }
 
     generateId() {
         return AlunoModel.maxId++
     }
 
-    calculateAverage() {
-        this.medias = {}
-        let materias = Object.keys(this.notas)
-        materias.forEach(materia => {
-            this.medias[materia] = avarege(...this.notas[materia])
-        })
-    }
+
 }
 
 AlunoModel.maxId = 0
