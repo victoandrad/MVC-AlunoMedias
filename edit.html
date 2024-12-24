@@ -79,19 +79,22 @@
     <script src="js/calc.js"></script>
     <script src="js/models/AlunoModel.js"></script>
     <script src="js/services/AlunoService.js"></script>
+    <script src="js/services/MateriaService.js"></script>
     <script src="js/views/AlunoView.js"></script>
     <script src="js/views/EditAlunoView.js"></script>
     <script src="js/controllers/AlunoController.js"></script>
+    <script src="js/controllers/EditAlunoController.js"></script>
     <script>
 
-        const alunosService = new AlunoService()
+        const alunoService = new AlunoService()
 
         const params = new URLSearchParams(window.location.search)
         const id = parseInt(params.get("id"))
-        const aluno = alunosService.findById(1)
+        const aluno = alunoService.findById(1)
 
-        const editAlunoView = new EditAlunoView()
+        const editAlunoView = new EditAlunoView("[data-edit-notas]", new MateriaService().materias)
     
+        const editAlunoController = new EditAlunoController(aluno, editAlunoView)
 
         document.getElementById("first_name").value = aluno.nome
 
