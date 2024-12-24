@@ -23,7 +23,7 @@ class AlunoView {
         this.tbody.innerHTML = ""
         alunos.forEach(aluno => {
             let tr = document.createElement("tr")
-            tr.innerHTML = `<td>${aluno.nome}</td>`
+            tr.innerHTML = `<td><a href="edit.html?id=${aluno._id}">${aluno.nome}</a></td>`
             this.materias.forEach(materia => {
 
                 if (aluno.medias[materia] !== undefined) {
