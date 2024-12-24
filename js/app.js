@@ -21,32 +21,43 @@ const alunos = [
     },
 ]
 
-// Variáveis globais
-const table = document.querySelector("[table-data]")
-const thead = table.querySelector("thead")
-const tbody = table.querySelector("tbody")
+// // Variáveis globais
+// const table = document.querySelector("[table-data]")
+// const thead = table.querySelector("thead")
+// const tbody = table.querySelector("tbody")
 
-// Para renderizar o thead
-function renderThead() {
-    let header = document.createElement("tr")
-    header.innerHTML = `<td>Nome</td>`
-    header.innerHTML += Object.keys(alunos[0].notas).map(materia => {
-        return `<td>${materia}</td>`
-    }).join("")
+// // Para renderizar o thead
+// function renderThead() {
+//     let header = document.createElement("tr")
+//     header.innerHTML = `<td>Nome</td>`
+//     header.innerHTML += Object.keys(alunos[0].notas).map(materia => {
+//         return `<td>${materia}</td>`
+//     }).join("")
 
-    thead.appendChild(header)
-}
-renderThead()
+//     thead.appendChild(header)
+// }
+// renderThead()
 
-// Para renderizar os alunos no tbody
-function renderTbody() {
-    alunos.forEach(aluno => {
-        let tr = document.createElement("tr")
-        tr.innerHTML = `<td>${aluno.nome}</td>`
-        for (let materia in aluno.medias) {
-            tr.innerHTML += `<td>${aluno.medias[materia]}</td>`
-        }
-        tbody.appendChild(tr)
-    })
-}
-renderTbody()
+// // Para renderizar os alunos no tbody
+// function renderTbody() {
+//     alunos.forEach(aluno => {
+//         let tr = document.createElement("tr")
+//         tr.innerHTML = `<td>${aluno.nome}</td>`
+//         for (let materia in aluno.medias) {
+//             tr.innerHTML += `<td>${aluno.medias[materia]}</td>`
+//         }
+//         tbody.appendChild(tr)
+//     })
+// }
+// renderTbody()
+
+
+
+const alunoService = new AlunoService()
+
+alunos.forEach(aluno => {
+    alunoService.insert(new AlunoModel(aluno))
+})
+
+const alunoModel = new AlunoModel()
+const alunoView = new AlunoView("[table-data]")
