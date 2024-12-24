@@ -29,7 +29,9 @@ class AlunoService {
     recoverLocalStorage() {
         const data = localStorage.getItem("alunos")
         if (data) {
-            this.alunos = JSON.parse(data)
+            JSON.parse(data).forEach(aluno => {
+                this.alunos.push(new AlunoModel(aluno))
+            })
         } else {
             this.alunos = []
         }

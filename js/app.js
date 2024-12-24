@@ -28,7 +28,7 @@ const alunoService = new AlunoService()
 // })
 
 const alunoModel = new AlunoModel()
-const alunoView = new AlunoView("[table-data]")
+const alunoView = new AlunoView("[table-data]", new MateriaService().materias)
 const alunoController = new AlunoController(alunoService, alunoView)
 
 document.querySelector("form").addEventListener("submit", e => {

@@ -1,9 +1,9 @@
 class AlunoView {
-    constructor(container) {
+    constructor(container, materias) {
         this.container = document.querySelector(container)
         this.thead = this.container.querySelector("thead")
         this.tbody = this.container.querySelector("tbody")
-        this.materias = ["portugues", "matematica", "historia", "ciencias"]
+        this.materias = materias
 
         this.renderHeader()
     }
