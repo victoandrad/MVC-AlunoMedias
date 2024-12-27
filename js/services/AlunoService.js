@@ -1,4 +1,6 @@
-class AlunoService {
+import { AlunoModel } from "./../models/AlunoModel.js"
+
+export class AlunoService {
     constructor() {
         this.alunos = []
 

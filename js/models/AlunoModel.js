@@ -1,4 +1,6 @@
-class AlunoModel {
+import { avarege } from "./../calc.js"
+
+export class AlunoModel {
     constructor({_id, nome, notas} = {notas: {}}) {
         this._id = _id !== undefined ? _id : this.generateId()
         this.nome = nome

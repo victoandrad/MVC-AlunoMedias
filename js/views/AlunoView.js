@@ -1,4 +1,4 @@
-class AlunoView {
+export class AlunoView {
     constructor(container, materias) {
         this.container = document.querySelector(container)
         this.thead = this.container.querySelector("thead")

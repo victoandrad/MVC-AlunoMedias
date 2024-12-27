@@ -1,4 +1,4 @@
-class EditAlunoView {
+export class EditAlunoView {
     constructor(container, materias) {
         this.container = document.querySelector(container)
         this.notas = this.container.querySelector("[data-edit-notas]")
