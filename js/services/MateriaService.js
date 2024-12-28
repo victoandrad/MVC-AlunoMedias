@@ -1,5 +1,5 @@
 export class MateriaService {
     constructor() {
-        this.materias = ["portugues", "matematica", "historia", "ciencias"]
+        this.materias = ["portuguese", "mathematics", "history", "science"]
     }
 }

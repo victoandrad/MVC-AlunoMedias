@@ -11,7 +11,7 @@ export class AlunoView {
     renderHeader() {
         this.thead.innerHTML = ""
         let tr = document.createElement("tr")
-        tr.innerHTML = `<td>Nome</td>`
+        tr.innerHTML = `<td>student</td>`
         tr.innerHTML += this.materias.map(materia => {
             return `<td>${materia}</td>`
         }).join("")
@@ -27,9 +27,9 @@ export class AlunoView {
             this.materias.forEach(materia => {
 
                 if (aluno.medias[materia] !== undefined) {
-                    tr.innerHTML += `<td>${aluno.medias[materia]}</td>`
+                    tr.innerHTML += `<td>${Math.ceil(aluno.medias[materia])}</td>`
                 } else {
-                    tr.innerHTML += `<td><a href="edit.html?id=${aluno._id}">Incluir nota</a></td>`
+                    tr.innerHTML += `<td><a href="edit.html?id=${aluno._id}">include grade</a></td>`
                 }
     
             })

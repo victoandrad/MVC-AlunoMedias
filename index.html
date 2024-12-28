@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Victor Andrade">
-    <meta name="description" content="Gerenciador de médias escolares">
-    <title>Médias de Alunos</title>
+    <meta name="description" content="School Grade Manager">
+    <title>Home - Students Grade</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="css/materialize.min.css">
@@ -18,14 +18,6 @@
 
       .underlined {
         border-bottom: 3px solid currentColor;
-      }
-
-      .reproved {
-        background-color: red;
-      }
-
-      .aproved {
-        background-color: green;
       }
 
       .form-add {
@@ -43,18 +35,13 @@
   <body>
     <div class="container">
       <div class="hero center card-panel materialize-red darken-4 white-text z-depth-3">
-        <h1 class="materialize-red-text text-lighten-3">Curso Javascript Completo</h1>
+        <h1 class="materialize-red-text text-lighten-3">Students Grade</h1>
       </div>
-      <h2 class="materialize-red-text text-lighten-2 underlined main-title">Dados de Alunos</h2>
       <form class="form-add">
         <div class="row">
           <div class="input-field col s8">
-            <input type="text" class="validate" id="first_name" placeholder="Digite o nome do aluno">
-            <label for="first_name" class="active">Adicionar Aluno</label>
-          </div>
-          <div class="input-field col s8">
-            <input type="text" class="validate" id="search_name" placeholder="Digite o nome do aluno">
-            <label for="search_name" class="active">Buscar aluno</label>
+            <input type="text" class="validate" id="first_name" placeholder="Enter the name of student">
+            <label for="first_name" class="active">Add Student</label>
           </div>
           <div class="input-field col s4">
             <button class="btn-floating" type="submit" name="action">
@@ -63,22 +50,17 @@
           </div>
         </div>
       </form>
+      <div class="row">
+        <div class="input-field col s8">
+          <input type="text" class="validate" id="search_name" placeholder="Enter the name of student">
+          <label for="search_name" class="active">Search</label>
+        </div>
+      </div>
       <table table-data>
-        <thead>
-
-        </thead>
-        <tbody>
-
-        </tbody>
+        <thead></thead>
+        <tbody></tbody>
       </table>
     </div>
-    
-    <!-- <script src="js/calc.js"></script>
-    <script src="js/models/AlunoModel.js"></script>
-    <script src="js/services/AlunoService.js"></script>
-    <script src="js/services/MateriaService.js"></script>
-    <script src="js/views/AlunoView.js"></script>
-    <script src="js/controllers/AlunoController.js"></script> -->
     <script src="js/index.js" type="module"></script>
   </body>
 </html>
